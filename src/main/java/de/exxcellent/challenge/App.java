@@ -18,13 +18,15 @@ public final class App {
   public static void main(String... args) throws IOException {
 
     // Your preparation code …
-    Weather w = new Weather();
+    Weather w = new Weather("./src/main/resources/de/exxcellent/challenge/weather.csv");
 
     // Your day analysis function call …
-    int dayWithSmallestTempSpread = w.determineMinSpread("./src/main/resources/de/exxcellent/challenge/weather.csv");     
+    int dayWithSmallestTempSpread = w.determineMinSpread();     
     System.out.printf("Day with smallest temperature spread : %s%n", dayWithSmallestTempSpread);
     
-    String teamWithSmallestGoalSpread = "A good team"; // Your goal analysis function call …
+    // Your goal analysis function call …
+    Football f = new Football("./src/main/resources/de/exxcellent/challenge/football.csv");
+    String teamWithSmallestGoalSpread = f.determineSmallestSpread();
     System.out.printf("Team with smallest goal spread       : %s%n", teamWithSmallestGoalSpread);
   }
 }

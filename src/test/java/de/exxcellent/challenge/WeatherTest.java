@@ -34,6 +34,7 @@ class WeatherTest {
   @Test
   void testParseLine() {
     Weather w = new Weather();
+    
     w.parseLine("1,2,0");
     assertEquals(1, w.minSpreadDay);
     assertEquals(2, w.minSpreadTemp);
